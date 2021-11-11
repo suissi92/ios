@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+// MARK: - DeleteUserModel
+struct DeleteUserModel: Codable {
+    let deleted: Bool
+}

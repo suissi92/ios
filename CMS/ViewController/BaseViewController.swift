@@ -12,18 +12,38 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        endEditingOnTap()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // onTapGesture action
+    func endEditingOnTap() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
-    */
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    /*
+          Static function to Show Loader
+       */
+
+     func showLoader() {
+        self.showActivityIndicatoryInSuperview()
+      }
+
+      /*
+
+          Static function to Hide Loader
+
+       */
+
+     func hideLoader() {
+
+          self.hideActivityIndicatoryInSuperview()
+
+      }
 
 }

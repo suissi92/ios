@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+// MARK: - UsersModelElement
+struct UsersModelElement: Codable {
+    let id: Int
+    let name, username, email, password: String
+    let roles: [Role]
+}
+
+// MARK: - Role
+struct Role: Codable {
+    let id: Int
+    let name: String
+}
+
+typealias UsersModel = [UsersModelElement]

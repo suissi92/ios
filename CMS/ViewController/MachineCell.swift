@@ -9,15 +9,25 @@ import UIKit
 
 class MachineCell: UITableViewCell {
 
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var descriptionLbl: UILabel!
+    @IBOutlet weak var statusSwt: UISwitch!
+    @IBOutlet weak var feseSwt: UISwitch!
+    
+    static let nibname = "MachineCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    
+    func initCell(name: String, desc: String, type: String, status: Bool, fese: Bool) {
+        nameLbl.text = "\(name) (\(type))"
+        descriptionLbl.text = desc
+        statusSwt.setOn(status, animated: true)
+        feseSwt.setOn(fese, animated: true)
     }
+
 
 }

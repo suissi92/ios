@@ -49,36 +49,38 @@ class LoginVC: BaseViewController {
     
     
     @IBAction func logInBtnAction(_ sender: Any) {
-        var param: [String : AnyObject] = [:]
-        param ["password"] = passwordTF.text as AnyObject
-        param ["username"] = usernameTF.text as AnyObject
-        apiRequest(.post, url: Constants.loginEndPoint, params: param ) { (status, response) in
-            if status {
-                do {
-                    let resp = try JSONDecoder().decode(LogInModel.self, from: JSON(response!).rawData())
-                    
-                    if resp.accessToken.isEmpty {
-                        
- //     let error = try JSONDecoder().decode(ErrorModel.self, from: JSON(response!).rawData())
-                        
-                        print( "***********************Token null*************************")
-                        
-                    } else {
-                        
-                        print( "***********************jawik behiii*************************")
-                        DataBaseHelper.sharedInstance.setUsername(value: resp.username)
-                        DataBaseHelper.sharedInstance.setaccessToken(value: resp.accessToken)
-                        let dashboardVC = self.storyboard!.instantiateViewController(withIdentifier: "TabViewController") as! TabViewController
-                        self.navigationController?.pushViewController(dashboardVC, animated: true)
-                    }
-                    
-                } catch {
-                    
-                    print( "***********************Erreur parsing json*************************")
-
-                }
-            }
-        }
+        let dashboardVC = self.storyboard!.instantiateViewController(withIdentifier: "TabViewController") as! TabViewController
+        self.navigationController?.pushViewController(dashboardVC, animated: true)
+//        var param: [String : AnyObject] = [:]
+//        param ["password"] = passwordTF.text as AnyObject
+//        param ["username"] = usernameTF.text as AnyObject
+//        apiRequest(.post, url: Constants.loginEndPoint, params: param ) { (status, response) in
+//            if status {
+//                do {
+//                    let resp = try JSONDecoder().decode(LogInModel.self, from: JSON(response!).rawData())
+//
+//                    if resp.accessToken.isEmpty {
+//
+// //     let error = try JSONDecoder().decode(ErrorModel.self, from: JSON(response!).rawData())
+//
+//                        print( "***********************Token null*************************")
+//
+//                    } else {
+//
+//                        print( "***********************jawik behiii*************************")
+//                        DataBaseHelper.sharedInstance.setUsername(value: resp.username)
+//                        DataBaseHelper.sharedInstance.setaccessToken(value: resp.accessToken)
+//                        let dashboardVC = self.storyboard!.instantiateViewController(withIdentifier: "TabViewController") as! TabViewController
+//                        self.navigationController?.pushViewController(dashboardVC, animated: true)
+//                    }
+//
+//                } catch {
+//
+//                    print( "***********************Erreur parsing json*************************")
+//
+//                }
+//            }
+//        }
     }
     
     

@@ -40,18 +40,20 @@ class MachineViewController: BaseViewController, UITableViewDelegate, UITableVie
     }
     override func viewDidAppear(_ animated: Bool) {
         
-        apiRequest(.get, url: Constants.machinesList, params: [:] ) { (status, response) in
-            if status {
-                do {
-                    let resp = try JSONDecoder().decode(Machines.self, from: JSON(response!).rawData())
-                        print( "***********************jawik behiii List *************************")
-                    self.datasource = resp
-                    self.table.reloadData()
-                } catch {
-                    print( "***********************Erreur parsing json List*************************")
-                }
-            }
-        }
+//        apiRequest(.get, url: Constants.machinesList, params: [:] ) { (status, response) in
+//            if status {
+//                do {
+//                    let resp = try JSONDecoder().decode(Machines.self, from: JSON(response!).rawData())
+//                        print( "***********************jawik behiii List *************************")
+//                    self.datasource = resp
+//                    self.table.reloadData()
+//                } catch {
+//                    print( "***********************Erreur parsing json List*************************")
+//                }
+//            }
+//        }        
+        self.datasource = Constants.machines
+        self.table.reloadData()
         
     }
     @IBAction func AddMachineBtnAction(_ sender: Any) {

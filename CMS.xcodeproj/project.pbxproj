@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D1A1ADA274028FB00B2E1BD /* LinesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A1AD9274028FB00B2E1BD /* LinesModel.swift */; };
+		3D1A1ADC27402C3500B2E1BD /* LineManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A1ADB27402C3500B2E1BD /* LineManagerViewController.swift */; };
 		FA269CF8271F115800BCF2DE /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA269CF7271F115800BCF2DE /* TabViewController.swift */; };
 		FA269CFC271F1D3C00BCF2DE /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA269CFB271F1D3C00BCF2DE /* UsersModel.swift */; };
 		FA269CFE271F28C800BCF2DE /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA269CFD271F28C800BCF2DE /* AddUserViewController.swift */; };
@@ -55,6 +57,8 @@
 
 /* Begin PBXFileReference section */
 		38DADB07FD1C6E2C51E1F76B /* Pods-CMS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CMS.release.xcconfig"; path = "Target Support Files/Pods-CMS/Pods-CMS.release.xcconfig"; sourceTree = "<group>"; };
+		3D1A1AD9274028FB00B2E1BD /* LinesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesModel.swift; sourceTree = "<group>"; };
+		3D1A1ADB27402C3500B2E1BD /* LineManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineManagerViewController.swift; sourceTree = "<group>"; };
 		90FBD6508918A9A5A8766344 /* Pods_CMS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CMS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C50E1EBFAF685CE27C58B344 /* Pods-CMS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CMS.debug.xcconfig"; path = "Target Support Files/Pods-CMS/Pods-CMS.debug.xcconfig"; sourceTree = "<group>"; };
 		FA269CF7271F115800BCF2DE /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 				FAA7264E272ED56500B93E10 /* MachineCell.swift */,
 				FAA72650272ED79800B93E10 /* MachineViewController.swift */,
 				FAA72654273353F300B93E10 /* AddMachineViewController.swift */,
+				3D1A1ADB27402C3500B2E1BD /* LineManagerViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 				FA269CFB271F1D3C00BCF2DE /* UsersModel.swift */,
 				FA269CFF271F415700BCF2DE /* DeleteUserModel.swift */,
 				FAA72652272EE2A700B93E10 /* MachinesModel.swift */,
+				3D1A1AD9274028FB00B2E1BD /* LinesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -429,7 +435,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D1A1ADC27402C3500B2E1BD /* LineManagerViewController.swift in Sources */,
 				FAA7264F272ED56500B93E10 /* MachineCell.swift in Sources */,
+				3D1A1ADA274028FB00B2E1BD /* LinesModel.swift in Sources */,
 				FA3096082711C53B00ACD26D /* BaseViewController.swift in Sources */,
 				FA30960A2711CA1B00ACD26D /* DashboardViewController.swift in Sources */,
 				FA7E52512711D4CC005FD5C2 /* UIViewControllerExtension.swift in Sources */,

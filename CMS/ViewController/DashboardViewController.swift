@@ -67,18 +67,21 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidAppear(_ animated: Bool) {
         
-        apiRequest(.get, url: Constants.usersList, params: [:] ) { (status, response) in
-            if status {
-                do {
-                    let resp = try JSONDecoder().decode(UsersModel.self, from: JSON(response!).rawData())
-                        print( "***********************jawik behiii List *************************")
-                    self.users = resp
-                    self.table.reloadData()
-                } catch {
-                    print( "***********************Erreur parsing json List*************************")
-                }
-            }
-        }
+//        apiRequest(.get, url: Constants.usersList, params: [:] ) { (status, response) in
+//            if status {
+//                do {
+//                    let resp = try JSONDecoder().decode(UsersModel.self, from: JSON(response!).rawData())
+//                        print( "***********************jawik behiii List *************************")
+//                    self.users = resp
+//                    self.table.reloadData()
+//                } catch {
+//                    print( "***********************Erreur parsing json List*************************")
+//                }
+//            }
+//        }
+        
+        self.users = Constants.users
+        self.table.reloadData()
         
     }
     
@@ -90,7 +93,6 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             self.deleteUser(id: self.users[indexPath.row].id, indexPath: indexPath)
         }
         let modifAction  = UITableViewRowAction(style: .normal, title: "Edit") { action, indexPath in
-
         }
         return [deleteAction,modifAction]
     }

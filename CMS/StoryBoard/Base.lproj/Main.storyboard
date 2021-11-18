@@ -168,15 +168,76 @@
         <!--Line Manager-->
         <scene sceneID="ZkH-Ke-Bo6">
             <objects>
-                <viewController id="BZ0-pg-uGd" sceneMemberID="viewController">
+                <viewController id="BZ0-pg-uGd" customClass="LineManagerViewController" customModule="CMS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dEJ-se-QEh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aLQ-ip-7SU">
+                                <rect key="frame" x="0.0" y="235.5" width="414" height="577.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="0.29908782756881208" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellLineMachine" id="ldZ-dw-gq7">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ldZ-dw-gq7" id="VEG-Bv-SQa">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Line Management" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ne4-oY-Je0">
+                                <rect key="frame" x="20" y="104" width="374" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Caa-xy-rlx">
+                                <rect key="frame" x="107" y="155.5" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="6jt-uf-GDQ"/>
+                                    <constraint firstAttribute="height" constant="40" id="wx4-Z6-6d4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="ADD NEW LINE">
+                                    <color key="titleColor" name="AccentColor"/>
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="AccentColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Zaa-s2-nV9"/>
-                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Caa-xy-rlx" firstAttribute="centerX" secondItem="ne4-oY-Je0" secondAttribute="centerX" id="O1q-as-cnA"/>
+                            <constraint firstItem="Zaa-s2-nV9" firstAttribute="bottom" secondItem="aLQ-ip-7SU" secondAttribute="bottom" id="VsW-oH-Tdn"/>
+                            <constraint firstItem="aLQ-ip-7SU" firstAttribute="top" secondItem="Caa-xy-rlx" secondAttribute="bottom" constant="40" id="Y8r-2M-4eJ"/>
+                            <constraint firstItem="Zaa-s2-nV9" firstAttribute="trailing" secondItem="ne4-oY-Je0" secondAttribute="trailing" constant="20" id="YKv-7Y-3bm"/>
+                            <constraint firstItem="ne4-oY-Je0" firstAttribute="top" secondItem="Zaa-s2-nV9" secondAttribute="top" constant="60" id="a58-If-4XK"/>
+                            <constraint firstItem="Caa-xy-rlx" firstAttribute="top" secondItem="ne4-oY-Je0" secondAttribute="bottom" constant="20" id="fPR-fo-aQd"/>
+                            <constraint firstItem="ne4-oY-Je0" firstAttribute="leading" secondItem="Zaa-s2-nV9" secondAttribute="leading" constant="20" id="mbf-lk-sng"/>
+                            <constraint firstItem="aLQ-ip-7SU" firstAttribute="leading" secondItem="Zaa-s2-nV9" secondAttribute="leading" id="nMA-ja-Lc2"/>
+                            <constraint firstItem="Zaa-s2-nV9" firstAttribute="trailing" secondItem="aLQ-ip-7SU" secondAttribute="trailing" id="osy-mw-b4k"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Line Manager" id="xUy-DH-fFG"/>
                     <navigationItem key="navigationItem" id="Lde-rS-Vlu"/>
+                    <connections>
+                        <outlet property="table" destination="aLQ-ip-7SU" id="UBv-8G-LaI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLw-7F-qYe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -830,7 +891,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sh1-aw-mNC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1103" y="81"/>
+            <point key="canvasLocation" x="1007" y="49"/>
         </scene>
     </scenes>
     <resources>
@@ -849,9 +910,6 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
